@@ -1,0 +1,42 @@
+<h2>Formularios Reactivos</h2>
+<form [formGroup]="formulario" (ngSubmit)="enviar()">
+
+  <!-- Campo nombre -->
+  <div class="form-group">
+    <label for="nombre">Nombre:</label>
+    <input formControlName="nombre" id="nombre" type="text" class="form-control">
+    <div *ngIf="campoInvalido('nombre')" class="alert alert-danger">Campo requerido</div>
+  </div>
+  <!-- Campo E/Mail -->
+  <div class="form-group">
+    <label for="email">E/Mail:</label>
+    <input formControlName="correo" id="email" type="text" class="form-control">
+    <div *ngIf="campoInvalido('correo')" class="alert alert-danger">Campo requerido</div>
+    <div *ngIf="campoCorreo()" class="alert alert-danger">Email invalido</div>
+  </div>
+  <!-- Campo Telefono -->
+  <div class="form-group">
+    <label for="telefono">Telefono:</label>
+    <input maxlength="10" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" formControlName="telefono" id="telefono" type="number" class="form-control">
+    <div *ngIf="campoInvalido('telefono')" class="alert alert-danger">Campo requerido</div>
+  </div>
+  <!-- Campo Direccion -->
+  <div class="form-group">
+    <label for="direccion">Direccion:</label>
+    <input formControlName="direccion" id="direccion" type="text" class="form-control">
+  </div>
+  <div *ngIf="campoInvalido('direccion')" class="alert alert-danger">Campo requerido</div>
+  <!-- Campo Select Pais -->
+  <div class="form-group">
+    <label for="pais">Pais:</label>
+    <select formControlName="pais" class="form-control" name="pais" id="pais">
+      <option *ngFor="let item of paises" value="item.nombre">
+        {{ item.nombre }}
+      </option>
+    </select>
+    <div *ngIf="campoSelectInvalido()" class="alert alert-danger"></div>
+  </div>
+  <hr>
+  <!-- BUTTON -->
+  <button type="submit" class="btn btn-primary" [disabled]="formulario.invalid">Guardar</button>
+</form>

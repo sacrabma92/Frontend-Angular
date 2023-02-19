@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { BasicosComponent } from './ejemplos/basicos/basicos.component';
 import { FormateaFechaPipe } from './utilidades/formatea-fecha.pipe';
@@ -19,6 +20,9 @@ import { ErrorComponent } from './paginas/error/error.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { FooterComponent } from './componentes/footer/footer.component';
+import { FormulariosReactivosComponent } from './paginas/formularios-reactivos/formularios-reactivos.component';
+import { ValidaSelectDirective } from './validaciones/valida-select.directive';
+import { ModalComponent } from './paginas/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -36,14 +40,20 @@ import { FooterComponent } from './componentes/footer/footer.component';
     MaterialComponent,
     ErrorComponent,
     CabeceraComponent,
-    FooterComponent
+    FooterComponent,
+    FormulariosReactivosComponent,
+    ValidaSelectDirective,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+  
