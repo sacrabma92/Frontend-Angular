@@ -1,0 +1,17 @@
+<h2>Data-Binding</h2>
+<p>
+  Ejemplo botón
+  <br><br>
+  <button [disabled]="disable" (click)="cambiar()">Presioname</button>
+</p>
+<!-- <div style="background-color: {{color}};">Hola</div> -->
+<hr>
+<div [style]="'background-color:'+color+';'">Hol1</div>
+<p>
+  {{ texto }}
+</p>
+<p [innerHTML]="texto"></p>
+<hr>
+<div>
+  <img [src]="'../../../assets/' + img" [width]="ancho" height="alto">
+</div>

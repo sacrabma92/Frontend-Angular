@@ -46,3 +46,10 @@
     <span *ngIf="par">Es par</span>
   </p>
 </div>
+<hr>
+<h3>Pipes</h3>
+<p>{{ texto | slice:0:100}}...</p>
+<p>Cantidad: {{ cantidad | currency:'USD' }}</p>
+<p>{{fecha | date: 'dd/MM/yyyy' }}</p>
+<p>{{fecha | formateaFecha }}</p>
+<p>{{cantidad | formateaNumeros }}</p>

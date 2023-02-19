@@ -1,7 +1,19 @@
+import { ErrorComponent } from './paginas/error/error.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { HomeComponent } from './paginas/home/home.component';
+import { SobreNosotrosComponent } from './paginas/sobre-nosotros/sobre-nosotros.component';
+import { MaterialComponent } from './paginas/material/material.component';
+import { FormulariosComponent } from './paginas/formularios/formularios.component';
+
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'formularios', component: FormulariosComponent },
+  { path: 'material', component: MaterialComponent },
+  { path: 'sobre-nosotros', component: SobreNosotrosComponent },
+  { path: '**', component: ErrorComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
