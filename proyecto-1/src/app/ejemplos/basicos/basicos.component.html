@@ -1,0 +1,48 @@
+<h3>Interpolación</h3>
+<ul>
+  <li>Nombre: {{ nombre }}</li>
+  <li>Email: {{ correo }}</li>
+  <li>Edad: {{ edad }} años</li>
+  <li>Fecha: {{ fecha | date }}</li>
+  <li>Paises: {{ paises | json }}</li>
+</ul>
+<hr>
+<h3>Condicionales</h3>
+<p *ngIf="edad >=  18; else edadElse">Es mayor de edad</p>
+<ng-template #edadElse>
+  <p>No es mayor de edad, es muy joven aun</p>
+</ng-template>
+<hr>
+<h3>Operador Ternario</h3>
+<p>{{ (edad >= 18) ? 'Ternario si es mayor' : 'Ternario NO es mayor' }}</p>
+<hr>
+<h3>Switch Case</h3>
+<div [ngSwitch]="numero">
+  <p *ngSwitchCase="12">Es 12</p>
+  <p *ngSwitchCase="14">Es 14</p>
+  <p *ngSwitchCase="15">Es 15</p>
+  <p *ngSwitchDefault="">No es ninguno</p>
+</div>
+<hr>
+<h3>Ng-Container</h3>
+<ng-container *ngIf="edad >= 19">
+  Se cumple la condición
+</ng-container>
+<hr>
+<h4>ngFor</h4>
+<ul>
+  <li *ngFor="let item of numeros; index let index">{{ index   }} - Numero: {{ item }}</li>
+</ul>
+<h3>Arreglo de paises</h3>
+<ul>
+  <li *ngFor="let item of paises">{{ item }}</li>
+</ul>
+<hr>
+<h3>Odd y Even</h3>
+<div *ngFor="let item of paises;let i = index; let impar = odd; let par = even" [ngClass]="{azul:par, verde:impar}">
+  <p>
+    {{ i }} - {{ item }}
+    <span *ngIf="impar">Es impar</span>
+    <span *ngIf="par">Es par</span>
+  </p>
+</div>
