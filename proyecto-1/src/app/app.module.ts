@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 
 import { BasicosComponent } from './ejemplos/basicos/basicos.component';
 import { FormateaFechaPipe } from './utilidades/formatea-fecha.pipe';
@@ -23,6 +24,15 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { FormulariosReactivosComponent } from './paginas/formularios-reactivos/formularios-reactivos.component';
 import { ValidaSelectDirective } from './validaciones/valida-select.directive';
 import { ModalComponent } from './paginas/modal/modal.component';
+import { MomentComponent } from './paginas/moment/moment.component';
+import { ServiciosComponent } from './paginas/servicios/servicios.component';
+import { LocalStorageComponent } from './paginas/local-storage/local-storage.component';
+import { LocalStorage2Component } from './paginas/local-storage2/local-storage2.component';
+import { LocalStorage3Component } from './paginas/local-storage3/local-storage3.component';
+import SessionStorageComponent from './paginas/session-storage/session-storage.component';
+import { SessionStorag2Component } from './paginas/session-storag2/session-storag2.component';
+import CookieComponent from './paginas/cookie/cookie.component';
+import Cookie2Component from './paginas/cookie2/cookie2.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +53,16 @@ import { ModalComponent } from './paginas/modal/modal.component';
     FooterComponent,
     FormulariosReactivosComponent,
     ValidaSelectDirective,
-    ModalComponent
+    ModalComponent,
+    MomentComponent,
+    ServiciosComponent,
+    LocalStorageComponent,
+    LocalStorage2Component,
+    LocalStorage3Component,
+    SessionStorageComponent,
+    SessionStorag2Component,
+    CookieComponent,
+    Cookie2Component
   ],
   imports: [
     BrowserModule,
@@ -52,8 +71,7 @@ import { ModalComponent } from './paginas/modal/modal.component';
     ReactiveFormsModule,
     NgbModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-  
