@@ -1,0 +1,23 @@
+<h1>Categorias</h1>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/api-rest">API-Rest</a></li>
+    <li class="breadcrumb-item" aria-current="/api/categorias">Categorias</li>
+    <li class="breadcrumb-item active" aria-current="page">Agregar</li>
+  </ol>
+</nav>
+<div class="row">
+  <div class="col-8">
+    <form [formGroup]="formulario">
+
+        <div class="cross-validation">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" class="form-control" formControlName="nombre" placeholder="Nombre">
+          <div *ngIf="formulario.invalid && (nombre?.dirty || nombre?.touched)" class="alert alert-danger">Este campo es requerido</div>
+        </div>
+        <hr>
+        <button class="btn btn-primary" [disabled]="formulario.invalid" (click)="enviar()">Enviar</button>
+    </form>
+  </div>
+  <div class="col-4">&nbsp;</div>
+</div>

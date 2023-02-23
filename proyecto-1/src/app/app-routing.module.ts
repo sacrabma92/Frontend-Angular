@@ -1,3 +1,7 @@
+import { MaterialBotonesComponent } from './paginas/material-botones/material-botones.component';
+import { ApiRestCategoriasAddComponent } from './paginas/api-rest-categorias-add/api-rest-categorias-add.component';
+import { ApiRestCategoriasComponent } from './paginas/api-rest-categorias/api-rest-categorias.component';
+import { ApiRestComponent } from './paginas/api-rest/api-rest.component';
 import Cookie2Component from './paginas/cookie2/cookie2.component';
 import CookieComponent from './paginas/cookie/cookie.component';
 import { SessionStorag2Component } from './paginas/session-storag2/session-storag2.component';
@@ -22,6 +26,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'formularios', component: FormulariosComponent },
   { path: 'material', component: MaterialComponent },
+  { path: 'material/botones', component: MaterialBotonesComponent },
   { path: 'sobre-nosotros', component: SobreNosotrosComponent },
   { path: 'reactivos', component: FormulariosReactivosComponent },
   { path: 'moment', component: MomentComponent },
@@ -34,6 +39,10 @@ const routes: Routes = [
   { path: 'sessionstorage2', component: SessionStorag2Component },
   { path: 'cookie', component: CookieComponent },
   { path: 'cookie2', component: Cookie2Component },
+
+  { path: 'api-rest', component: ApiRestComponent },
+  { path: 'api/categorias', component: ApiRestCategoriasComponent },
+  { path: 'api/categorias/add', component: ApiRestCategoriasAddComponent },
   { path: '**', component: ErrorComponent },
 ];
 

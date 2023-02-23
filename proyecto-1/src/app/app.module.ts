@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
+import { HttpClientModule } from '@angular/common/http';
 
 import { BasicosComponent } from './ejemplos/basicos/basicos.component';
 import { FormateaFechaPipe } from './utilidades/formatea-fecha.pipe';
@@ -33,6 +34,14 @@ import SessionStorageComponent from './paginas/session-storage/session-storage.c
 import { SessionStorag2Component } from './paginas/session-storag2/session-storag2.component';
 import CookieComponent from './paginas/cookie/cookie.component';
 import Cookie2Component from './paginas/cookie2/cookie2.component';
+import { ApiRestComponent } from './paginas/api-rest/api-rest.component';
+import { ApiRestCategoriasComponent } from './paginas/api-rest-categorias/api-rest-categorias.component';
+import { ApiRestCategoriasAddComponent } from './paginas/api-rest-categorias-add/api-rest-categorias-add.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import { MaterialBotonesComponent } from './paginas/material-botones/material-botones.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -62,14 +71,23 @@ import Cookie2Component from './paginas/cookie2/cookie2.component';
     SessionStorageComponent,
     SessionStorag2Component,
     CookieComponent,
-    Cookie2Component
+    Cookie2Component,
+    ApiRestComponent,
+    ApiRestCategoriasComponent,
+    ApiRestCategoriasAddComponent,
+    MaterialBotonesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]
